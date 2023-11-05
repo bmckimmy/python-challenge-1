@@ -57,24 +57,24 @@ while place_order:
         i += 1
 
     # Get the customer's input
-    menu_category = input("Type menu number: ")
+    menu_selection = input("Type menu number: ")
 
     # Check if the customer's input is a number
-    if menu_category.isdigit():
+    if menu_selection.isdigit():
         # Check if the customer's input is a valid option
-        if int(menu_category) in menu_items.keys():
+        if int(menu_selection) in menu_items.keys():
             # Save the menu category name to a variable
-            menu_category_name = menu_items[int(menu_category)]
+            menu_selection_name = menu_items[int(menu_selection)]
             # Print out the menu category name they selected
-            print(f"You selected {menu_category_name}")
+            print(f"You selected {menu_selection_name}")
 
-            # Print out the menu options from the menu_category_name
-            print(f"What {menu_category_name} item would you like to order?")
+            # Print out the menu options from the menu_selection_name
+            print(f"What {menu_selection_name} item would you like to order?")
             i = 1
             menu_items_dict = {}
             print("Item # | Item name                | Price")
             print("-------|--------------------------|-------")
-            for key, value in menu[menu_category_name].items():
+            for key, value in menu[menu_selection_name].items():
                 # Check if the menu item is a dictionary to handle differently
                 if type(value) is dict:
                     for key2, value2 in value.items():
@@ -126,7 +126,7 @@ while place_order:
                 print("You didn't select a valid item number.")
         else:
             # Tell the customer they didn't select a menu option
-            print(f"{menu_category} was not a menu option.")
+            print(f"{menu_selection} was not a menu option.")
     else:
         # Tell the customer they didn't select a number
         print("You didn't select a number.")
