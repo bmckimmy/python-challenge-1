@@ -1,3 +1,3 @@
 # python-challenge-1
 Module 2 Challenge
-Designing an ordering system of a fruit paradise restaurant menu
+Designing an interactive ordering system from a food truck menu
