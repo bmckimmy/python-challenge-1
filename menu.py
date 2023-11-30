@@ -116,9 +116,10 @@ while place_order:
                     if quantity.isdigit():
                         quantity = int(quantity)
                     else: 
+                        print("Invalid input for quantity. Defaulting to 1.")
                         quantity = 1
                     # Add the item name, price, and quantity to the order list
-                    order_list.append({'Item Name': food_item, 'Price': item_price, 'Quantity': quantity})
+                    order_list.append({'Item name': food_item, 'Price': item_price, 'Quantity': quantity})
                 else:
                     print("Your input is invalid. Please enter a valid item number.")
             else:
@@ -134,7 +135,7 @@ while place_order:
     while True:
         # Ask the customer if they would like to order anything else
         keep_ordering = input("Would you like to keep ordering? (Y)es or (N)o ")
-
+        keep_ordering = keep_ordering.lower()
         # Check the customer's input
         match keep_ordering:
             case 'y':
@@ -157,7 +158,7 @@ print("--------------------------|--------|----------")
 # Loop through the items in the customer's order and print them
 for order_item in order_list:
     # Store the dictionary items as variables
-    item_name, price, quantity = order_item['Item Name'], order_item['Price'], order_item['Quantity']
+    item_name, price, quantity = order_item['Item name'], order_item['Price'], order_item['Quantity']
 
     # Calculate the number of spaces for formatted printing
     item_space_str_len = 30 - len(item_name)
